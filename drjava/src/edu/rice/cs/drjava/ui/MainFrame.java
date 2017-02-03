@@ -3504,7 +3504,7 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
       
       // initialize menu bar and actions
       _setUpActions();
-      _setUpMenuBar(_menuBar, _fileMenu, _editMenu, _toolsMenu, _projectMenu, _debugMenu, _languageLevelMenu, _helpMenu);
+      _setUpMenuBar(_menuBar, _fileMenu, _editMenu, _toolsMenu, _projectMenu, _debugMenu, /*_languageLevelMenu*/null, _helpMenu);
       setJMenuBar(_menuBar);
       
       //    _setUpDocumentSelector();
@@ -6654,7 +6654,7 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     _setUpMenuBar(menuBar,
                   _setUpFileMenu(mask, false), _setUpEditMenu(mask, false), _setUpToolsMenu(mask, false),
                   _setUpProjectMenu(mask, false), _showDebugger?_setUpDebugMenu(mask, false):null,
-                  _setUpLanguageLevelMenu(mask, false), _setUpHelpMenu(mask, false));
+                  /*_setUpLanguageLevelMenu(mask, false)*/null, _setUpHelpMenu(mask, false));
   }
 
   void _setUpMenuBar(JMenuBar menuBar, JMenu fileMenu, JMenu editMenu, JMenu toolsMenu, JMenu projectMenu, 
@@ -6665,7 +6665,8 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     menuBar.add(toolsMenu);
     menuBar.add(projectMenu);
     if (_showDebugger && (debugMenu != null)) menuBar.add(debugMenu);
-    menuBar.add(languageLevelMenu);
+    if(languageLevelMenu != null)
+    	menuBar.add(languageLevelMenu);
     menuBar.add(helpMenu);
     // Plastic-specific style hints
     if (Utilities.isPlasticLaf()) {
