@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="base" path="src"/>
+	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+	<classpathentry kind="con" path="/home/dimalit/java/drjava_git/drjava/${java8-tools}"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/asm-all-5.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/concutest-junit-4.7-withrt-nodep.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/docs.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/dynamicjava-base.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/ecj-4.5.1.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/jacocoant.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/javalanglevels-base.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/jgoodies-common-1.8.1.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/jgoodies-forms-1.9.0.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/jgoodies-looks-2.7.0.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/jsoup-1.8.1.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/org.jacoco.agent-0.7.7.201606060606.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/org.jacoco.ant-0.7.7.201606060606.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/org.jacoco.core-0.7.7.201606060606.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/org.jacoco.report-0.7.7.201606060606.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/platform.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/plt.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/seaglasslookandfeel-0.2.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/buildlib/junit.jar"/>
+	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/buildlib/netbeans-memory-leak-utils.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/lib/tools.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

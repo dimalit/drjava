@@ -6839,8 +6839,8 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     editMenu.addSeparator();
     _addMenuItem(editMenu, _switchToPrevAction, KEY_PREVIOUS_DOCUMENT, updateKeyboardManager);
     _addMenuItem(editMenu, _switchToNextAction, KEY_NEXT_DOCUMENT, updateKeyboardManager);
-    _addMenuItem(editMenu, _browseBackAction, KEY_BROWSE_BACK, updateKeyboardManager);
-    _addMenuItem(editMenu, _browseForwardAction, KEY_BROWSE_FORWARD, updateKeyboardManager);
+//    _addMenuItem(editMenu, _browseBackAction, KEY_BROWSE_BACK, updateKeyboardManager);
+//    _addMenuItem(editMenu, _browseForwardAction, KEY_BROWSE_FORWARD, updateKeyboardManager);
     editMenu.addSeparator();
     
     // Go to
@@ -6985,7 +6985,7 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     _addMenuItem(historyMenu, _loadHistoryScriptAction, KEY_LOAD_HISTORY_SCRIPT, updateKeyboardManager);
     _addMenuItem(historyMenu, _saveHistoryAction, KEY_SAVE_HISTORY, updateKeyboardManager);
     _addMenuItem(historyMenu, _clearHistoryAction, KEY_CLEAR_HISTORY, updateKeyboardManager);
-    toolsMenu.add(historyMenu);
+    //toolsMenu.add(historyMenu);
     
     // Interactions, console
     final JMenu interMenu = _newJMenu("Interactions & Console");    
@@ -7001,14 +7001,14 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     if (DrJava.getConfig().getSetting(SHOW_DEBUG_CONSOLE).booleanValue()) {
       toolsMenu.add(_showDebugConsoleAction);
     }
-    toolsMenu.add(interMenu);
+//    toolsMenu.add(interMenu);
     
     final JMenu extMenu = _newJMenu("External Processes");
     _addMenuItem(extMenu, _executeExternalProcessAction, KEY_EXEC_PROCESS, updateKeyboardManager);
     final JMenuItem execItem = extMenu.getItem(0);
     extMenu.addSeparator();
     extMenu.add(_editExternalProcessesAction);
-    toolsMenu.add(extMenu);
+//    toolsMenu.add(extMenu);
     
     final int savedCount = DrJava.getConfig().getSetting(OptionConstants.EXTERNAL_SAVED_COUNT);
     final int namesCount = DrJava.getConfig().getSetting(OptionConstants.EXTERNAL_SAVED_NAMES).size();
@@ -7069,13 +7069,13 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     _addMenuItem(advancedMenu, _newDrJavaInstanceAction, KEY_NEW_DRJAVA_INSTANCE, updateKeyboardManager);
     toolsMenu.add(advancedMenu);
 
-    toolsMenu.addSeparator();    
+//    toolsMenu.addSeparator();    
     
-    _addMenuItem(toolsMenu, _bookmarksPanelAction, KEY_BOOKMARKS_PANEL, updateKeyboardManager);
-    _addMenuItem(toolsMenu, _toggleBookmarkAction, KEY_BOOKMARKS_TOGGLE, updateKeyboardManager);
+//    _addMenuItem(toolsMenu, _bookmarksPanelAction, KEY_BOOKMARKS_PANEL, updateKeyboardManager);
+//    _addMenuItem(toolsMenu, _toggleBookmarkAction, KEY_BOOKMARKS_TOGGLE, updateKeyboardManager);
     
-    toolsMenu.addSeparator();
-    _addMenuItem(toolsMenu, _followFileAction, KEY_FOLLOW_FILE, updateKeyboardManager);
+//    toolsMenu.addSeparator();
+//    _addMenuItem(toolsMenu, _followFileAction, KEY_FOLLOW_FILE, updateKeyboardManager);
     
     // Add the listener that changes the "Run Main" menu item
     OptionListener<Boolean> runMainListener = new OptionListener<Boolean>() {

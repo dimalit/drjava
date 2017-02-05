@@ -623,7 +623,7 @@ public interface OptionConstants {
   public static final VectorOption<KeyStroke> KEY_GOTO_FILE =
     new VectorOption<KeyStroke>("key.goto.file", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_G, MASK|KeyEvent.SHIFT_MASK)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_E, MASK)));
   
   /** The key binding for goto this file. */
   public static final VectorOption<KeyStroke> KEY_GOTO_FILE_UNDER_CURSOR =
@@ -635,19 +635,19 @@ public interface OptionConstants {
   public static final VectorOption<KeyStroke> KEY_OPEN_JAVADOC =
     new VectorOption<KeyStroke>("key.open.javadoc", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F6, KeyEvent.SHIFT_MASK)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F1, KeyEvent.SHIFT_MASK)));
   
   /** The key binding for open Javadoc under cursor. */
   public static final VectorOption<KeyStroke> KEY_OPEN_JAVADOC_UNDER_CURSOR =
     new VectorOption<KeyStroke>("key.open.javadoc.under.cursor", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F6, MASK)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F1, MASK)));
   
   /** The key binding for complete file. */
   public static final VectorOption<KeyStroke> KEY_COMPLETE_FILE =
     new VectorOption<KeyStroke>("key.complete.file", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_SPACE, MASK|KeyEvent.SHIFT_MASK)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_SPACE, MASK)));
   
 //  /** The key binding for indenting */
 //  public static final VectorOption<KeyStroke> KEY_INDENT =
@@ -671,13 +671,13 @@ public interface OptionConstants {
   public static final VectorOption<KeyStroke> KEY_PREVIOUS_DOCUMENT =
     new VectorOption<KeyStroke>("key.previous.document", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_COMMA, MASK)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_PAGE_UP, MASK)));
   
   /** The key binding for selecting next document */
   public static final VectorOption<KeyStroke> KEY_NEXT_DOCUMENT =
     new VectorOption<KeyStroke>("key.next.document",
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_PERIOD, MASK)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_PAGE_DOWN, MASK)));
   
   /** The key binding for changing the focus to the previous pane */
   public static final VectorOption<KeyStroke> KEY_PREVIOUS_PANE =
@@ -707,13 +707,13 @@ public interface OptionConstants {
   public static final VectorOption<KeyStroke> KEY_BROWSE_FORWARD =
     new VectorOption<KeyStroke>("key.browse.forward", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, ALT_MASK|SHIFT_MASK)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, ALT_MASK)));
   
   /** The key binding for jumping to the previous location in the browser history */
   public static final VectorOption<KeyStroke> KEY_BROWSE_BACK =
     new VectorOption<KeyStroke>("key.browse.back", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, ALT_MASK|SHIFT_MASK)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, ALT_MASK)));
   
   /** The key binding for going to the next region in the tabbed pane */
   public static final VectorOption<KeyStroke> KEY_TABBED_NEXT_REGION =

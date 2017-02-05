@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>drjava</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>${java8-tools}</name>
+			<type>2</type>
+			<location>/home/dimalit/java/drjava_git/drjava/${java8-tools}</location>
+		</link>
+		<link>
+			<name>base</name>
+			<type>2</type>
+			<location>/home/dimalit/java/drjava_git/drjava/classes/base</location>
+		</link>
+		<link>
+			<name>src</name>
+			<type>2</type>
+			<location>/home/dimalit/java/drjava_git/drjava/src</location>
+		</link>
+	</linkedResources>
+</projectDescription>
