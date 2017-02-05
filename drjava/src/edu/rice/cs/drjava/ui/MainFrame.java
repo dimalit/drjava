@@ -1603,34 +1603,6 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     }
   };
   
-  /** Goes to the file specified by the word the cursor is on. */
-  void _gotoFileUnderCursor() {
-//    _log.log("Calling gotoFileUnderCursor()");
-    OpenDefinitionsDocument odd = getCurrentDefPane().getOpenDefDocument();
-    String mask = "";
-    int loc = getCurrentDefPane().getCaretPosition();
-    String s = odd.getText();
-    // find start
-    int start = loc;
-    while(start > 0) {
-      if (! Character.isJavaIdentifierPart(s.charAt(start-1))) { break; }
-      --start;
-    }
-    while((start<s.length()) && (!Character.isJavaIdentifierStart(s.charAt(start))) && (start<loc)) {
-      ++start;
-    }
-    // find end
-    int end = loc-1;
-    while(end<s.length()-1) {
-      if (! Character.isJavaIdentifierPart(s.charAt(end+1))) { break; }
-      ++end;
-    }
-    if ((start>=0) && (end<s.length())) {
-      mask = s.substring(start, end + 1);
-    }
-    gotoFileMatchingMask(mask);
-  }
-  
   /** Goes to the file matching the specified mask.
     * @param mask word specifying the file to go to*/
   public void gotoFileMatchingMask(String mask) {        
@@ -1710,11 +1682,6 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
       }
     }
   }
-  
-  /** Goes to the file specified by the word the cursor is on. */
-  final Action _gotoFileUnderCursorAction = new AbstractAction("Go to File Under Cursor") {
-    public void actionPerformed(ActionEvent ae) { _gotoFileUnderCursor(); }
-  };
   
   /** Reset the position of the "Open Javadoc" dialog. */
   public void resetOpenJavadocDialogPosition() {
@@ -6506,8 +6473,6 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     _setUpAction(_findPrevAction, "Find Previous", "Repeats the last find in the opposite direction");
     _setUpAction(_gotoLineAction, "Go to line", "Go to a line number in the document");
     _setUpAction(_gotoFileAction, "Go to File", "Go to a file specified by its name");
-    _setUpAction(_gotoFileUnderCursorAction, "Go to File Under Cursor",
-                 "Go to the file specified by the word the cursor is located on");
     
     _setUpAction(_switchToPrevAction, "Previous Document", "Up", "Switch to the previous document");
     _setUpAction(_switchToNextAction, "Next Document", "Down", "Switch to the next document");
@@ -6847,7 +6812,6 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     final JMenu goToMenu = _newJMenu("Go To");
     _addMenuItem(goToMenu, _gotoLineAction, KEY_GOTO_LINE, updateKeyboardManager);
     _addMenuItem(goToMenu, _gotoFileAction, KEY_GOTO_FILE, updateKeyboardManager);
-    _addMenuItem(goToMenu, _gotoFileUnderCursorAction, KEY_GOTO_FILE_UNDER_CURSOR, updateKeyboardManager);
     _addMenuItem(goToMenu, _gotoOpeningBraceAction, KEY_OPENING_BRACE, updateKeyboardManager);
     _addMenuItem(goToMenu, _gotoClosingBraceAction, KEY_CLOSING_BRACE, updateKeyboardManager);
     editMenu.add(goToMenu);

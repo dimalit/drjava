@@ -624,13 +624,7 @@ public interface OptionConstants {
     new VectorOption<KeyStroke>("key.goto.file", 
                                 new KeyStrokeOption("",null), 
                                 to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_E, MASK)));
-  
-  /** The key binding for goto this file. */
-  public static final VectorOption<KeyStroke> KEY_GOTO_FILE_UNDER_CURSOR =
-    new VectorOption<KeyStroke>("key.goto.file.under.cursor", 
-                                new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F6, 0)));
-  
+    
   /** The key binding for open Javadoc. */
   public static final VectorOption<KeyStroke> KEY_OPEN_JAVADOC =
     new VectorOption<KeyStroke>("key.open.javadoc", 
