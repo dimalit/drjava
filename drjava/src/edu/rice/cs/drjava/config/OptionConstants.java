@@ -1036,31 +1036,31 @@ public interface OptionConstants {
   public static final VectorOption<KeyStroke> KEY_DEBUG_RESUME =
     new VectorOption<KeyStroke>("key.debug.resume", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F7, 0)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F9, 0)));
   
   /** The key binding for automatically tracing through each line of a program*/
   public static final VectorOption<KeyStroke> KEY_DEBUG_AUTOMATIC_TRACE = 
-    new VectorOption<KeyStroke>("key.debug.automatic.trace", 
-                                new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F9, 0)));
+	new VectorOption<KeyStroke>("key.debug.automatic.trace",
+								new KeyStrokeOption("",null),
+								to.vector());  
   
   /** The key binding for stepping into in the debugger */
   public static final VectorOption<KeyStroke> KEY_DEBUG_STEP_INTO =
     new VectorOption<KeyStroke>("key.debug.step.into", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F12, 0)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F7, 0)));
   
   /** The key binding for stepping over in the debugger. */
   public static final VectorOption<KeyStroke> KEY_DEBUG_STEP_OVER =
     new VectorOption<KeyStroke>("key.debug.step.over", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F11, 0)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F8, 0)));
   
   /** The key binding for stepping out in the debugger. */
   public static final VectorOption<KeyStroke> KEY_DEBUG_STEP_OUT =
     new VectorOption<KeyStroke>("key.debug.step.out", 
                                 new KeyStrokeOption("",null), 
-                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F12, SHIFT_MASK)));
+                                to.vector(KeyStroke.getKeyStroke(KeyEvent.VK_F7, SHIFT_MASK)));
   
   /** The key binding for toggling a breakpoint. */
   public static final VectorOption<KeyStroke> KEY_DEBUG_BREAKPOINT_TOGGLE =

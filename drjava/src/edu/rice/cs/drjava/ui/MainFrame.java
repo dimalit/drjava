@@ -7407,9 +7407,9 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     
     // Cut, copy, paste
     _toolBar.addSeparator();
-    _toolBar.add(_createToolBarButton(cutAction));
-    _toolBar.add(_createToolBarButton(copyAction));
-    _toolBar.add(_createToolBarButton(pasteAction));
+//    _toolBar.add(_createToolBarButton(cutAction));
+//    _toolBar.add(_createToolBarButton(copyAction));
+//    _toolBar.add(_createToolBarButton(pasteAction));
     
     // Undo, redo
     // Simple workaround, for now, for bug # 520742:
