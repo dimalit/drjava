@@ -40,5 +40,6 @@
 	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/buildlib/junit.jar"/>
 	<classpathentry kind="lib" path="/home/dimalit/java/drjava_git/drjava/lib/buildlib/netbeans-memory-leak-utils.jar"/>
 	<classpathentry kind="lib" path="/usr/lib/jvm/java-8-openjdk-amd64/lib/tools.jar"/>
+	<classpathentry kind="lib" path="lib/weblaf-complete-1.28.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

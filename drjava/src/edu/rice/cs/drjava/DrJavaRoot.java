@@ -69,7 +69,7 @@ import static edu.rice.cs.plt.debug.DebugUtil.error;
 import static edu.rice.cs.plt.debug.DebugUtil.debug;
 
 /** Main class for DrJava.
-  * @version $Id: DrJavaRoot.java 5611 2012-07-25 15:03:33Z rcartwright $
+  * @version $Id$
   */
 public class DrJavaRoot {  
   /** Class to probe to see if the debugger is available */
@@ -98,6 +98,14 @@ public class DrJavaRoot {
     // Platform-specific UI setup.
     PlatformFactory.ONLY.beforeUISetup();
     
+/*	try {
+		Class.forName("com.alee.laf.WebLookAndFeel");
+		javax.swing.UIManager.installLookAndFeel(new UIManager.LookAndFeelInfo("WebLookAndFeel", "com.alee.laf.WebLookAndFeel"));
+	} catch (ClassNotFoundException e) {
+		// TODO: better log message!
+		e.printStackTrace();
+	}    
+*/
 //    Utilities.show("DrJavaRoot started with args = " + Arrays.toString(args));
     // let DrJava class handle command line arguments
     if (!DrJava.handleCommandLineArgs(args)) {
