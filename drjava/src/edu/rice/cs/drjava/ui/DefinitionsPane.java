@@ -839,14 +839,6 @@ public class DefinitionsPane extends AbstractDJPane implements Finalizable<Defin
 
     /* Go to this file... */
     _popMenu.addSeparator();
-    JMenuItem gotoFileUnderCursorItem = new JMenuItem("Go to File Under Cursor");
-    gotoFileUnderCursorItem.addActionListener ( new AbstractAction() {
-      public void actionPerformed( ActionEvent ae) {
-        updateCurrentLocationInDoc();
-        _mainFrame._gotoFileUnderCursor();
-      }
-    });
-    _popMenu.add(gotoFileUnderCursorItem);
 
     /* Toggle bookmark */
     JMenuItem toggleBookmarkItem = new JMenuItem("Toggle Bookmark");
@@ -860,7 +852,7 @@ public class DefinitionsPane extends AbstractDJPane implements Finalizable<Defin
     _popMenu.add(toggleBookmarkItem);
       
     if (_mainFrame.getModel().getDebugger().isAvailable()) {
-      _popMenu.addSeparator();
+//      _popMenu.addSeparator();
 
       // Breakpoint
       JMenuItem breakpointItem = new JMenuItem("Toggle Breakpoint");
