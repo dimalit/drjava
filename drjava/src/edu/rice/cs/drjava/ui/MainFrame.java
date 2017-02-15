@@ -1179,6 +1179,12 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
   /** Show Submit Client dialog */
   private volatile AbstractAction _submitAction = new AbstractAction("Submit") {
     public void actionPerformed(ActionEvent ae) {
+    	// try to re-connect if possible
+    	if(_submitFrame.getServer()==null){
+    		_submitFrame = SubmitClient.createSubmitForm(SubmitClient.prepareServer(true));
+    		if(_submitFrame.getServer()==null)
+    			return;
+    	}
     	String text = _model.getActiveDocument().getText();
     	_submitFrame.setText(text);
     	_submitFrame.setVisible(true);
@@ -3766,7 +3772,8 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
       _editExternalDialog = new EditExternalDialog(MainFrame.this);
       _jarOptionsDialog = new JarOptionsDialog(MainFrame.this);
       
-      _submitFrame = SubmitClient.createSubmitForm(SubmitClient.prepareServer());
+      // false = hide error messages
+      _submitFrame = SubmitClient.createSubmitForm(SubmitClient.prepareServer(false));
       
       initTabbedPanesFrame();
       initDebugFrame();
