@@ -3773,7 +3773,12 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
       _jarOptionsDialog = new JarOptionsDialog(MainFrame.this);
       
       // false = hide error messages
-      _submitFrame = SubmitClient.createSubmitForm(SubmitClient.prepareServer(false));
+      //_submitFrame = SubmitClient.createSubmitForm(SubmitClient.prepareServer(false));
+      // create with null server - but re-create after - when trying to submit
+      // TODO: better just set whole frame to null..
+      //no effect: System.setProperty("sun.rmi.transport.tcp.handshakeTimeout", "1000");
+      //System.setProperty("sun.rmi.transport.tcp.responseTimeout", "1000");
+      _submitFrame = SubmitClient.createSubmitForm(null);
       
       initTabbedPanesFrame();
       initDebugFrame();
