@@ -3,6 +3,7 @@
 	<name>drjava</name>
 	<comment></comment>
 	<projects>
+		<project>submit</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

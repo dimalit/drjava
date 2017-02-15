@@ -118,6 +118,8 @@ import edu.rice.cs.util.swing.Utilities;
 import edu.rice.cs.util.swing.*;
 import edu.rice.cs.util.text.ConsoleDocument;
 import edu.rice.cs.util.text.SwingDocument;
+import ua.khnu.dimalit.drjava.SubmitClient;
+import ua.khnu.dimalit.drjava.SubmitForm;
 import edu.rice.cs.util.UnexpectedException;
 import edu.rice.cs.util.XMLConfig;
 import static edu.rice.cs.drjava.config.OptionConstants.KEY_NEW_CLASS_FILE;
@@ -220,6 +222,7 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
   private volatile JButton _junitButton;
   private volatile JButton _errorsButton;
   private volatile JButton _coverageButton;
+  private volatile JButton _submitButton;
   
   private final JToolBar _toolBar = new JToolBar();
   private final JFileChooser _interactionsHistoryChooser = new JFileChooser();
@@ -249,6 +252,7 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
   private volatile AboutDialog _aboutDialog;
   private volatile RecentDocFrame _recentDocFrame;    /** Holds/shows the history of documents for ctrl-tab. */
   private volatile CoverageFrame _coverageFrame;
+  private volatile SubmitForm _submitFrame;
   
 //  private ProjectPropertiesFrame _projectPropertiesFrame;
   
@@ -1171,6 +1175,15 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     _coverageFrame.setVisible(true);
     _coverageFrame.toFront(); 
   }
+  
+  /** Show Submit Client dialog */
+  private volatile AbstractAction _submitAction = new AbstractAction("Submit") {
+    public void actionPerformed(ActionEvent ae) {
+    	String text = _model.getActiveDocument().getText();
+    	_submitFrame.setText(text);
+    	_submitFrame.setVisible(true);
+    }
+  };  
   
   /** Default cut action.  Returns focus to the correct pane. */
   final Action cutAction = new DefaultEditorKit.CutAction() {
@@ -3752,6 +3765,8 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
       _executeExternalDialog = new ExecuteExternalDialog(MainFrame.this);
       _editExternalDialog = new EditExternalDialog(MainFrame.this);
       _jarOptionsDialog = new JarOptionsDialog(MainFrame.this);
+      
+      _submitFrame = SubmitClient.createSubmitForm(SubmitClient.prepareServer());
       
       initTabbedPanesFrame();
       initDebugFrame();
@@ -6496,6 +6511,7 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     _setUpAction(_junitAllAction, "Test", "Run JUnit over all open JUnit tests");
 
     _setUpAction(_coverageAction, "Code Coverage", "Generate code coverage reports");
+    _setUpAction(_submitAction, "Submit Code", "Submit code to course repository");
 
     if (_model.getJavadocModel().isAvailable()) {
       _setUpAction(_javadocAllAction, "Javadoc", "Create and save Javadoc for the packages of all open documents");
@@ -6933,6 +6949,7 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
 
  // Code Coverage
  _addMenuItem(toolsMenu, _coverageAction, KEY_CODE_COVERAGE, updateKeyboardManager);
+ _addMenuItem(toolsMenu, _submitAction, KEY_SUBMIT, updateKeyboardManager);
  toolsMenu.addSeparator();
     
     // Javadoc
@@ -7436,7 +7453,8 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     _toolBar.add(_runButton = _createToolBarButton(_runAction));
     _toolBar.add(_junitButton = _createToolBarButton(_junitAllAction));
     _toolBar.add(_createToolBarButton(_javadocAllAction));
-    _toolBar.add(_coverageButton = _createToolBarButton(_coverageAction));    
+    _toolBar.add(_coverageButton = _createToolBarButton(_coverageAction));
+    _toolBar.add(_submitButton = _createToolBarButton(_submitAction));
 
     // DrJava Errors
     _toolBar.addSeparator();

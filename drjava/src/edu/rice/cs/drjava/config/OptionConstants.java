@@ -1163,6 +1163,10 @@ public interface OptionConstants {
   public static final VectorOption<KeyStroke> KEY_CODE_COVERAGE = 
     new VectorOption<KeyStroke>("key.code.coverage", new KeyStrokeOption("",null), to.vector());
   
+  /** The same for Submit Client - no key */
+  public static final VectorOption<KeyStroke> KEY_SUBMIT = 
+    new VectorOption<KeyStroke>("key.code.coverage", new KeyStrokeOption("",null), to.vector());  
+  
   /* ---------- Find Replace Options ---------- */
   
   public static final BooleanOption FIND_MATCH_CASE = 
