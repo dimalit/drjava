@@ -417,9 +417,10 @@ public abstract class FileOps {
    * @throws IOException if an IO operation fails
    */
   public static String readFileAsSwingText(final File file) throws IOException {
-    FileReader reader = null;
+    Reader reader = null;
     try {
-      reader = new FileReader(file);
+    //  reader = new FileReader(file);
+      reader = new InputStreamReader(new FileInputStream(file), "UTF8");    	
       final StringBuilder buf = new StringBuilder();
       
       char pred = (char) 0; // initialize as null character
@@ -446,9 +447,10 @@ public abstract class FileOps {
    *              instead, which provides the same functionality.
    */
   @Deprecated public static String readFileAsString(final File file) throws IOException {
-    FileReader reader = null;
+    Reader reader = null;
     try {
-      reader = new FileReader(file);
+    //reader = new FileReader(file);
+      reader = new InputStreamReader(new FileInputStream(file), "UTF8");
       final StringBuilder buf = new StringBuilder();
       
       while (reader.ready()) {
@@ -507,9 +509,10 @@ public abstract class FileOps {
    * @deprecated  Use the equivalent {@link edu.rice.cs.plt.io.IOUtil#writeStringToFile(File, String, boolean)} instead
    */
   @Deprecated public static void writeStringToFile(File file, String text, boolean append) throws IOException {
-    FileWriter writer = null;
+    Writer writer = null;
     try {
-      writer = new FileWriter(file, append);
+      //writer = new FileWriter(file, append);
+      writer = new OutputStreamWriter(new FileOutputStream(file, append), "UTF8");
       writer.write(text);
     }
     finally { if (writer != null) writer.close(); }
