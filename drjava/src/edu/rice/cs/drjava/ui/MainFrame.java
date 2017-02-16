@@ -1821,7 +1821,7 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
           final int classNameStartPos = (aPos < 0) ? 0 : line.indexOf(classNamePrefix) + prefixLength;
           final int classNameEndPos = line.toLowerCase().indexOf(hText, classNameStartPos);
           if ((classNameStartPos > 0) && (classNameEndPos > 0)) {  // class link found
-            String link = line.substring(aPos + aTextLength, classNameEndPos + hTextLength-1);			// -2 for " and space
+            String link = line.substring(aPos + aTextLength, classNameEndPos + hTextLength-2);			// -2 for " and space
             String classNamePath = line.substring(classNameStartPos, classNameEndPos);
             String fullClassName = classNamePath.replace('/', '.');
             String simpleClassName = fullClassName;
