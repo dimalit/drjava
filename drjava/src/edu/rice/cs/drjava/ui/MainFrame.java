@@ -65,6 +65,8 @@ import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.Vector;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
@@ -1704,8 +1706,13 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
   
   /** Reset the position of the "Open Javadoc" dialog. */
   public void resetOpenJavadocDialogPosition() {
-    initOpenJavadocDialog();
-    _openJavadocDialog.setFrameState("default");
+    try {
+		initOpenJavadocDialog().get();
+		_openJavadocDialog.setFrameState("default");
+	} catch (InterruptedException | ExecutionException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
     if (DrJava.getConfig().getSetting(DIALOG_OPENJAVADOC_STORE_POSITION).booleanValue()) {
       DrJava.getConfig().setSetting(DIALOG_OPENJAVADOC_STATE, "default");
     }
@@ -1713,8 +1720,8 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
   
   /** Initialize dialog if necessary.  Runs asynchronously so as not to block event handling thread. 
     * Binds _openJavaDocDialog.  Should it be synchronized using a future? */
-  void initOpenJavadocDialog() {
-    Executors.newSingleThreadExecutor().submit(new Runnable() {
+  Future<?> initOpenJavadocDialog() {
+    return Executors.newSingleThreadExecutor().submit(new Runnable() {
       public void run() {
         if (_openJavadocDialog == null) {
           PredictiveInputFrame.InfoSupplier<JavaAPIListEntry> info = 
@@ -1942,24 +1949,30 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
   volatile Set<JavaAPIListEntry> _javaAPISet = new HashSet<JavaAPIListEntry>();
   
   /** Action that asks the user for a file name and goes there.  Only executes in the event thread. */
-  private volatile Action _openJavadocAction = new AbstractAction("Open Java API Javadoc...") {
-    public void actionPerformed(ActionEvent ae) {
-      hourglassOn();
-      new Thread() {
-        public void run() {
-        // run this in a thread other than the main thread
-          initOpenJavadocDialog();
-          Utilities.invokeLater(new Runnable() {
-            public void run() {
-              // but now run this in the event thread again
-              _openJavadocDialog.setItems(true, getJavaAPISet()); // ignore case
-              _openJavadocDialog.setVisible(true);
-            }
-          });
-        }
-      }.start();
-    }
-  };
+	private volatile Action _openJavadocAction = new AbstractAction("Open Java API Javadoc...") {
+		public void actionPerformed(ActionEvent ae) {
+			hourglassOn();
+			new Thread() {
+				public void run() {
+					// run this in a thread other than the main thread
+					try {
+						initOpenJavadocDialog().get();
+						Utilities.invokeLater(new Runnable() {
+							public void run() {
+								// but now run this in the event thread again
+								_openJavadocDialog.setItems(true, getJavaAPISet()); // ignore
+																					// case
+								_openJavadocDialog.setVisible(true);
+							}
+						});
+					} catch (InterruptedException | ExecutionException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} // catch
+				}// run
+			}.start();
+		}
+	};
   
   /** Opens the Javadoc specified by the word the cursor is on.  Only executes in the event thread. */
   private void _openJavadocUnderCursor() {
@@ -2054,9 +2067,14 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
                   hourglassOff();
                 }
                 else {
-                  initOpenJavadocDialog();
-                  _openJavadocDialog.setModel(true, pim); // ignore case
-                  _openJavadocDialog.setVisible(true);
+                  try {
+					initOpenJavadocDialog().get();
+					_openJavadocDialog.setModel(true, pim); // ignore case
+					_openJavadocDialog.setVisible(true);
+				} catch (InterruptedException | ExecutionException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}			// wait until ok!!
                 }
               }
             }
@@ -10599,16 +10617,21 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
   
   /** Reset the position of the "Open Javadoc" dialog. */
   public void resetAutoImportDialogPosition() {
-    _initAutoImportDialog();
-    _autoImportDialog.setFrameState("default");
+    try {
+		_initAutoImportDialog().get();
+		_autoImportDialog.setFrameState("default");
+	} catch (InterruptedException | ExecutionException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
     if (DrJava.getConfig().getSetting(DIALOG_AUTOIMPORT_STORE_POSITION).booleanValue()) {
       DrJava.getConfig().setSetting(DIALOG_AUTOIMPORT_STATE, "default");
     }
   }
   
   /** Initialize dialog if necessary.  Runs asynchronously. */
-  private void _initAutoImportDialog() {
-    Executors.newSingleThreadExecutor().submit(new Runnable() {
+  private Future<?> _initAutoImportDialog() {
+    return Executors.newSingleThreadExecutor().submit(new Runnable() {
       public void run() {
         if (_autoImportDialog == null) {
           _autoImportPackageCheckbox = new JCheckBox("Import Package");
@@ -10759,12 +10782,17 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
             PredictiveInputModel<JavaAPIListEntry> pim =
               new PredictiveInputModel<JavaAPIListEntry>(true, new PrefixStrategy<JavaAPIListEntry>(), autoImportList);
             pim.setMask(s);
-            _initAutoImportDialog();
+            try {
+				_initAutoImportDialog().get();
 //            int size = (autoImportList == null) ? -1 : autoImportList.size();
 //            _log.log("***** Adding an autoImportList list of size: " + size);
-            _autoImportDialog.setModel(true, pim); // ignore case
-            _autoImportPackageCheckbox.setSelected(false);
-            _autoImportDialog.setVisible(true);
+				_autoImportDialog.setModel(true, pim); // ignore case
+				_autoImportPackageCheckbox.setSelected(false);
+				_autoImportDialog.setVisible(true);
+			} catch (InterruptedException | ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
           }
         });
       }
