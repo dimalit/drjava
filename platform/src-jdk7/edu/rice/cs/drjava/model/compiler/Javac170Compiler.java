@@ -198,6 +198,7 @@ public class Javac170Compiler extends JavacCompiler { // Javac170FilteringCompil
       if (e.getValue().length()>0) options.add(e.getValue());
     }
     options.add("-g");
+    options.add("-encoding"); options.add("UTF8");
 
     if (classPath != null) { options.add("-classpath"); options.add(IOUtil.pathToString(classPath)); }
     if (sourcePath != null) { options.add("-sourcepath"); options.add(IOUtil.pathToString(sourcePath)); }
