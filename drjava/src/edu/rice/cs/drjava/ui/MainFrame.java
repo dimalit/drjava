@@ -1181,7 +1181,7 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
     public void actionPerformed(ActionEvent ae) {
     	// try to re-connect if possible
     	if(_submitFrame.getServer()==null){
-    		_submitFrame = SubmitClient.createSubmitForm(SubmitClient.prepareServer(true));
+    		_submitFrame = SubmitClient.createSubmitForm(SubmitClient.prepareServer());
     		if(_submitFrame.getServer()==null)
     			return;
     	}
