@@ -241,8 +241,8 @@ public class ResourceBundleConfiguration extends FileConfiguration {
    * are written in the same way as the about dialog.
    * Values equal to their defaults are not written to disk.
    */
-  public void saveConfiguration(OutputStream os, String header) throws IOException {
-    _shadowed.saveConfiguration(os,header);
+  public void saveConfiguration(Writer wr, String header) throws IOException {
+    _shadowed.saveConfiguration(wr,header);
   }
   
   /** Adds an OptionListener to the given Option, to be notified each time the option changes.

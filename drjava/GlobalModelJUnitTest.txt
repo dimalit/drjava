@@ -1,0 +1,156 @@
+16 Feb 2017 14:33:20 GMT: Log 'GlobalModelJUnitTest.txt' opened: 16 Feb 2017 14:33:20 GMT with name /home/dimalit/java/drjava_git/drjava/GlobalModelJUnitTest.txt
+16 Feb 2017 14:33:26 GMT: ----testResultOfNonPublicTestCase-----
+16 Feb 2017 14:33:28 GMT: After test
+16 Feb 2017 14:33:28 GMT: testResultOfNonPublicTestCase completed
+16 Feb 2017 14:33:30 GMT: ----testJUnit4MultiTest-----
+16 Feb 2017 14:33:32 GMT: errors: []
+16 Feb 2017 14:33:32 GMT: testJUnit4SMultiTest completed
+16 Feb 2017 14:33:34 GMT: ----testRealError-----
+16 Feb 2017 14:33:35 GMT: testRealError completed
+16 Feb 2017 14:33:37 GMT: ----testNoJUnitErrors-----
+16 Feb 2017 14:33:38 GMT: errors: class edu.rice.cs.drjava.model.junit.JUnitErrorModel:
+  
+16 Feb 2017 14:33:38 GMT: testNoJUnitErrors completed
+16 Feb 2017 14:33:40 GMT: ----testJUnit4NoTest-----
+16 Feb 2017 14:33:42 GMT: after test
+16 Feb 2017 14:33:42 GMT: testJUnit4NoTest completed
+16 Feb 2017 14:33:43 GMT: ----testCorrectFilesAfterIncorrectChanges-----
+16 Feb 2017 14:33:43 GMT: In testCorrectFilesAfterIncorrectChanges, DJTest.java = 
+import junit.framework.TestCase; class A { }  class B /* with syntax error */ { public void foo(int x) { } }  public class DJTest extends TestCase {    public void testAB() { assertTrue("this is true", true); }  }
+16 Feb 2017 14:33:45 GMT: after test
+16 Feb 2017 14:33:45 GMT: testCorrectFilesAfterIncorrectChanges completed
+16 Feb 2017 14:33:47 GMT: ----testJUnit4TwoMethod1Test-----
+16 Feb 2017 14:33:50 GMT: errors: []
+16 Feb 2017 14:33:50 GMT: testJUnit4TwoMethod1Test completed
+16 Feb 2017 14:33:52 GMT: -----testUnsavedAndUnCompiledChanges-----
+16 Feb 2017 14:33:52 GMT: Untitled file is named: (Untitled)  
+16 Feb 2017 14:33:52 GMT: Ordinary compile completed
+16 Feb 2017 14:33:54 GMT: document changed; modifiedSinceSave = true
+16 Feb 2017 14:33:55 GMT: JUnit completed
+16 Feb 2017 14:33:55 GMT: after test
+16 Feb 2017 14:33:55 GMT: testUnsavedAndUnCompiledChanges completed
+16 Feb 2017 14:33:57 GMT: ----testNonTestCaseError-----
+16 Feb 2017 14:33:59 GMT: after test
+16 Feb 2017 14:33:59 GMT: testNonTestCaseError completed
+16 Feb 2017 14:34:01 GMT: ----testNoClassFile-----
+16 Feb 2017 14:34:03 GMT: after test
+16 Feb 2017 14:34:03 GMT: testNoClassFile completed
+16 Feb 2017 14:34:06 GMT: ----testOneJUnitError-----
+16 Feb 2017 14:34:07 GMT: testOneJUnitError completed
+16 Feb 2017 14:34:10 GMT: ----testElspethOneJUnitError-----
+16 Feb 2017 14:34:11 GMT: testElspethOneJUnitError completed
+16 Feb 2017 14:34:13 GMT: ----testInfiniteLoop-----
+16 Feb 2017 14:34:14 GMT: Compilation of infinite loop completed
+16 Feb 2017 14:34:14 GMT: CheckCompile completed
+16 Feb 2017 14:34:14 GMT: Starting JUnit
+16 Feb 2017 14:34:16 GMT: ResetDone
+16 Feb 2017 14:34:16 GMT: after test
+16 Feb 2017 14:34:16 GMT: Reached Test End
+16 Feb 2017 14:34:16 GMT: testInfiniteLoop completed
+16 Feb 2017 14:34:18 GMT: ----testJUnit4StyleTestWorks-----
+16 Feb 2017 14:34:20 GMT: errors: []
+16 Feb 2017 14:34:20 GMT: ----testJUnit4StyleTestWorks completed
+16 Feb 2017 18:02:36 GMT: Log 'GlobalModelJUnitTest.txt' opened: 16 Feb 2017 18:02:36 GMT with name /home/dimalit/java/drjava_git/drjava/GlobalModelJUnitTest.txt
+16 Feb 2017 18:02:42 GMT: ----testResultOfNonPublicTestCase-----
+16 Feb 2017 18:02:44 GMT: After test
+16 Feb 2017 18:02:44 GMT: testResultOfNonPublicTestCase completed
+16 Feb 2017 18:02:46 GMT: ----testJUnit4MultiTest-----
+16 Feb 2017 18:02:47 GMT: errors: []
+16 Feb 2017 18:02:47 GMT: testJUnit4SMultiTest completed
+16 Feb 2017 18:02:49 GMT: ----testRealError-----
+16 Feb 2017 18:02:50 GMT: testRealError completed
+16 Feb 2017 18:02:52 GMT: ----testNoJUnitErrors-----
+16 Feb 2017 18:02:53 GMT: errors: class edu.rice.cs.drjava.model.junit.JUnitErrorModel:
+  
+16 Feb 2017 18:02:53 GMT: testNoJUnitErrors completed
+16 Feb 2017 18:02:55 GMT: ----testJUnit4NoTest-----
+16 Feb 2017 18:02:56 GMT: after test
+16 Feb 2017 18:02:56 GMT: testJUnit4NoTest completed
+16 Feb 2017 18:02:58 GMT: ----testCorrectFilesAfterIncorrectChanges-----
+16 Feb 2017 18:02:58 GMT: In testCorrectFilesAfterIncorrectChanges, DJTest.java = 
+import junit.framework.TestCase; class A { }  class B /* with syntax error */ { public void foo(int x) { } }  public class DJTest extends TestCase {    public void testAB() { assertTrue("this is true", true); }  }
+16 Feb 2017 18:02:59 GMT: after test
+16 Feb 2017 18:02:59 GMT: testCorrectFilesAfterIncorrectChanges completed
+16 Feb 2017 18:03:00 GMT: ----testJUnit4TwoMethod1Test-----
+16 Feb 2017 18:03:03 GMT: errors: []
+16 Feb 2017 18:03:03 GMT: testJUnit4TwoMethod1Test completed
+16 Feb 2017 18:03:04 GMT: -----testUnsavedAndUnCompiledChanges-----
+16 Feb 2017 18:03:04 GMT: Untitled file is named: (Untitled)  
+16 Feb 2017 18:03:04 GMT: Ordinary compile completed
+16 Feb 2017 18:03:05 GMT: document changed; modifiedSinceSave = true
+16 Feb 2017 18:03:05 GMT: JUnit completed
+16 Feb 2017 18:03:05 GMT: after test
+16 Feb 2017 18:03:05 GMT: testUnsavedAndUnCompiledChanges completed
+16 Feb 2017 18:03:07 GMT: ----testNonTestCaseError-----
+16 Feb 2017 18:03:08 GMT: after test
+16 Feb 2017 18:03:08 GMT: testNonTestCaseError completed
+16 Feb 2017 18:03:10 GMT: ----testNoClassFile-----
+16 Feb 2017 18:03:11 GMT: after test
+16 Feb 2017 18:03:11 GMT: testNoClassFile completed
+16 Feb 2017 18:03:13 GMT: ----testOneJUnitError-----
+16 Feb 2017 18:03:14 GMT: testOneJUnitError completed
+16 Feb 2017 18:03:15 GMT: ----testElspethOneJUnitError-----
+16 Feb 2017 18:03:17 GMT: testElspethOneJUnitError completed
+16 Feb 2017 18:03:19 GMT: ----testInfiniteLoop-----
+16 Feb 2017 18:03:20 GMT: Compilation of infinite loop completed
+16 Feb 2017 18:03:20 GMT: CheckCompile completed
+16 Feb 2017 18:03:20 GMT: Starting JUnit
+16 Feb 2017 18:03:22 GMT: ResetDone
+16 Feb 2017 18:03:22 GMT: after test
+16 Feb 2017 18:03:22 GMT: Reached Test End
+16 Feb 2017 18:03:22 GMT: testInfiniteLoop completed
+16 Feb 2017 18:03:23 GMT: ----testJUnit4StyleTestWorks-----
+16 Feb 2017 18:03:25 GMT: errors: []
+16 Feb 2017 18:03:25 GMT: ----testJUnit4StyleTestWorks completed
+16 Feb 2017 18:13:06 GMT: Log 'GlobalModelJUnitTest.txt' opened: 16 Feb 2017 18:13:06 GMT with name /home/dimalit/java/drjava_git/drjava/GlobalModelJUnitTest.txt
+16 Feb 2017 18:13:11 GMT: ----testResultOfNonPublicTestCase-----
+16 Feb 2017 18:13:14 GMT: After test
+16 Feb 2017 18:13:14 GMT: testResultOfNonPublicTestCase completed
+16 Feb 2017 18:13:15 GMT: ----testJUnit4MultiTest-----
+16 Feb 2017 18:13:17 GMT: errors: []
+16 Feb 2017 18:13:17 GMT: testJUnit4SMultiTest completed
+16 Feb 2017 18:13:19 GMT: ----testRealError-----
+16 Feb 2017 18:13:20 GMT: testRealError completed
+16 Feb 2017 18:13:22 GMT: ----testNoJUnitErrors-----
+16 Feb 2017 18:13:23 GMT: errors: class edu.rice.cs.drjava.model.junit.JUnitErrorModel:
+  
+16 Feb 2017 18:13:23 GMT: testNoJUnitErrors completed
+16 Feb 2017 18:13:24 GMT: ----testJUnit4NoTest-----
+16 Feb 2017 18:13:25 GMT: after test
+16 Feb 2017 18:13:25 GMT: testJUnit4NoTest completed
+16 Feb 2017 18:13:27 GMT: ----testCorrectFilesAfterIncorrectChanges-----
+16 Feb 2017 18:13:27 GMT: In testCorrectFilesAfterIncorrectChanges, DJTest.java = 
+import junit.framework.TestCase; class A { }  class B /* with syntax error */ { public void foo(int x) { } }  public class DJTest extends TestCase {    public void testAB() { assertTrue("this is true", true); }  }
+16 Feb 2017 18:13:28 GMT: after test
+16 Feb 2017 18:13:28 GMT: testCorrectFilesAfterIncorrectChanges completed
+16 Feb 2017 18:13:30 GMT: ----testJUnit4TwoMethod1Test-----
+16 Feb 2017 18:13:32 GMT: errors: []
+16 Feb 2017 18:13:32 GMT: testJUnit4TwoMethod1Test completed
+16 Feb 2017 18:13:34 GMT: -----testUnsavedAndUnCompiledChanges-----
+16 Feb 2017 18:13:34 GMT: Untitled file is named: (Untitled)  
+16 Feb 2017 18:13:34 GMT: Ordinary compile completed
+16 Feb 2017 18:13:35 GMT: document changed; modifiedSinceSave = true
+16 Feb 2017 18:13:35 GMT: JUnit completed
+16 Feb 2017 18:13:35 GMT: after test
+16 Feb 2017 18:13:35 GMT: testUnsavedAndUnCompiledChanges completed
+16 Feb 2017 18:13:37 GMT: ----testNonTestCaseError-----
+16 Feb 2017 18:13:38 GMT: after test
+16 Feb 2017 18:13:38 GMT: testNonTestCaseError completed
+16 Feb 2017 18:13:40 GMT: ----testNoClassFile-----
+16 Feb 2017 18:13:41 GMT: after test
+16 Feb 2017 18:13:41 GMT: testNoClassFile completed
+16 Feb 2017 18:13:42 GMT: ----testOneJUnitError-----
+16 Feb 2017 18:13:44 GMT: testOneJUnitError completed
+16 Feb 2017 18:13:45 GMT: ----testElspethOneJUnitError-----
+16 Feb 2017 18:13:47 GMT: testElspethOneJUnitError completed
+16 Feb 2017 18:13:48 GMT: ----testInfiniteLoop-----
+16 Feb 2017 18:13:49 GMT: Compilation of infinite loop completed
+16 Feb 2017 18:13:49 GMT: CheckCompile completed
+16 Feb 2017 18:13:49 GMT: Starting JUnit
+16 Feb 2017 18:13:51 GMT: ResetDone
+16 Feb 2017 18:13:51 GMT: after test
+16 Feb 2017 18:13:51 GMT: Reached Test End
+16 Feb 2017 18:13:51 GMT: testInfiniteLoop completed
+16 Feb 2017 18:13:53 GMT: ----testJUnit4StyleTestWorks-----
+16 Feb 2017 18:13:54 GMT: errors: []
+16 Feb 2017 18:13:54 GMT: ----testJUnit4StyleTestWorks completed

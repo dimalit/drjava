@@ -53,7 +53,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringReader;
-
+import java.io.Writer;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -3273,10 +3273,10 @@ public class AbstractGlobalModel implements SingleDisplayModel, OptionConstants,
 //          System.err.println("Calling FileOps.saveFile to save it");
           FileOps.saveFile(new FileOps.DefaultFileSaver(file) {
             /** Only runs in event thread so no read lock is necessary. */
-            public void saveTo(OutputStream os) throws IOException {
+            public void saveTo(Writer wr) throws IOException {
               DefinitionsDocument dd = getDocument();
               try {
-                _editorKit.write(os, dd, 0, dd.getLength());
+                _editorKit.write(wr, dd, 0, dd.getLength());
 //                Utilities.show ("Wrote file containing:\n" + doc.getText());
               }
               catch (BadLocationException docFailed) { throw new UnexpectedException(docFailed); }

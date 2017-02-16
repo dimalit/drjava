@@ -39,6 +39,7 @@ package edu.rice.cs.drjava.config;
 import edu.rice.cs.drjava.DrJavaTestCase;
 
 import java.io.ByteArrayOutputStream;
+import java.io.CharArrayWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
@@ -53,11 +54,11 @@ public class SavableConfigurationTest extends DrJavaTestCase {
    */
   SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy");
   
-  ByteArrayOutputStream outputBytes = null;
+  CharArrayWriter outputChars = null;
   
   public void setUp() throws Exception {
     super.setUp();
-    outputBytes = new ByteArrayOutputStream();
+    outputChars = new CharArrayWriter();
   }
   
   /** Tests the saveConfiguration method with no configuration data
@@ -66,9 +67,9 @@ public class SavableConfigurationTest extends DrJavaTestCase {
   public void testEmptyConfiguration() throws IOException {  
     SavableConfiguration emptyConfig = new SavableConfiguration(new DefaultOptionMap());
     
-    emptyConfig.saveConfiguration(outputBytes, "header");
+    emptyConfig.saveConfiguration(outputChars, "header");
     
-    String outputString = outputBytes.toString();
+    String outputString = outputChars.toString();
     String[] lines = outputString.split(System.getProperty("line.separator"));
     
     assertTrue("Data exists", outputString.length() > 0);
@@ -97,9 +98,9 @@ public class SavableConfigurationTest extends DrJavaTestCase {
     
     SavableConfiguration nonEmptyConfig = new SavableConfiguration(optionsMap);
     
-    nonEmptyConfig.saveConfiguration(outputBytes, "header");                 
+    nonEmptyConfig.saveConfiguration(outputChars, "header");                 
     
-    String outputString = outputBytes.toString();
+    String outputString = outputChars.toString();
     String[] lines = outputString.split(System.getProperty("line.separator"));
 
     assertTrue("Data exists", outputString.length() > 0);

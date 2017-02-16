@@ -46,6 +46,7 @@ import edu.rice.cs.drjava.model.*;
 import edu.rice.cs.util.OperationCanceledException;
 
 import java.io.Serializable;
+import java.io.Writer;
 import java.io.IOException;
 import java.io.File;
 import java.io.OutputStreamWriter;
@@ -241,10 +242,9 @@ public class History implements OptionConstants, Serializable {
     if (c != null) {
       if (! c.exists() || selector.verifyOverwrite(c)) {
         FileOps.DefaultFileSaver saver = new FileOps.DefaultFileSaver(c) {
-          public void saveTo(OutputStream os) throws IOException {
+          public void saveTo(Writer wr) throws IOException {
 
-            OutputStreamWriter osw = new OutputStreamWriter(os);
-            BufferedWriter bw = new BufferedWriter(osw);
+            BufferedWriter bw = new BufferedWriter(wr);
             String file = HISTORY_FORMAT_VERSION_2 + editedVersion;
             bw.write(file, 0, file.length());
             bw.close();

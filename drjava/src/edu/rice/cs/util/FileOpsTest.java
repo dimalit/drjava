@@ -122,9 +122,9 @@ public class FileOpsTest extends DrJavaTestCase {
     File backup = new File(writeTo.getPath() + "~");
     
     FileOps.saveFile(new FileOps.DefaultFileSaver(writeTo) {
-      public void saveTo(OutputStream os) throws IOException {
+      public void saveTo(Writer wr) throws IOException {
         String output = "version 1";
-        os.write(output.getBytes());
+        wr.write(output);
       }
       public boolean shouldBackup() {
         return false;
@@ -134,9 +134,9 @@ public class FileOpsTest extends DrJavaTestCase {
     assertEquals("save w/o backup did not backup", false, backup.exists());
     
     FileOps.saveFile(new FileOps.DefaultFileSaver(writeTo) {
-      public void saveTo(OutputStream os) throws IOException {
+      public void saveTo(Writer wr) throws IOException {
         String output = "version 2";
-        os.write(output.getBytes());
+        wr.write(output);
       }
     });
     assertEquals("save2 w backup", "version 2", FileOps.readFileAsString(writeTo));
@@ -144,9 +144,9 @@ public class FileOpsTest extends DrJavaTestCase {
                  FileOps.readFileAsString(backup));
     
     FileOps.saveFile(new FileOps.DefaultFileSaver(writeTo) {
-      public void saveTo(OutputStream os) throws IOException {
+      public void saveTo(Writer wr) throws IOException {
         String output =  "version 3";
-        os.write(output.getBytes());
+        wr.write(output);
       }
     });
     assertEquals("save3 w backup on", "version 3", FileOps.readFileAsString(writeTo));
@@ -157,9 +157,9 @@ public class FileOpsTest extends DrJavaTestCase {
     /* Now see what happens when saving fails and we were not making a backup.  Nothing should change. */
     try {
       FileOps.saveFile(new FileOps.DefaultFileSaver(writeTo) {
-        public void saveTo(OutputStream os) throws IOException {
+        public void saveTo(Writer wr) throws IOException {
           String output = "version 4";
-          os.write(output.getBytes());
+          wr.write(output);
           throw new IOException();
         }
       });
@@ -177,9 +177,9 @@ public class FileOpsTest extends DrJavaTestCase {
         public boolean shouldBackup () {
           return true;
         }
-        public void saveTo(OutputStream os) throws IOException {
+        public void saveTo(Writer wr) throws IOException {
           String output =  "version 5";
-          os.write(output.getBytes());
+          wr.write(output);
           throw new IOException();
         }
       });
@@ -201,9 +201,9 @@ public class FileOpsTest extends DrJavaTestCase {
     try {
       FileOps.saveFile(new FileOps.DefaultFileSaver(writeTo) {
         public boolean shouldBackup () { return true; }
-        public void saveTo(OutputStream os) throws IOException {
+        public void saveTo(Writer wr) throws IOException {
           String output =  "version 6";
-          os.write(output.getBytes());
+          wr.write(output);
         }
       });
       fail("The file to be saved was read-only!");

@@ -770,10 +770,12 @@ public abstract class FileOps {
         else throw new IOException("Could not create temp file " + tempFile + " in attempt to save " + file);
       }
       BufferedOutputStream bos = new BufferedOutputStream(fos);
-      fileSaver.saveTo(bos);
+      Writer wr;
+      wr = new OutputStreamWriter(bos, "UTF8");
+      fileSaver.saveTo(wr);
 //      System.err.println(bos + " written");
 //      System.err.println("Closing " + bos + " and " + fos);
-      bos.close();
+      wr.close();
 //      fos.close();
       
 //      System.err.println("Wrote: " + tempFile);
@@ -835,7 +837,7 @@ public abstract class FileOps {
      * @param os the OutputStream to write to
      * @throws IOException when saving fails for any reason
      */
-    public abstract void saveTo(OutputStream os) throws IOException;
+    public abstract void saveTo(Writer os) throws IOException;
     
     /** This method specifies the file for saving.  It should return the 
      * canonical name of the file, resolving symlinks. Otherwise, the saver 

@@ -2305,11 +2305,11 @@ public class MainFrame extends SwingFrame implements ClipboardOwner, DropTargetL
         if (! file.getCanonicalFile().exists() || selector.verifyOverwrite(file)) {  // confirm that existing file can be overwritten        
           FileOps.saveFile(new FileOps.DefaultFileSaver(file) {
             /** Only runs in event thread so no read lock is necessary. */
-            public void saveTo(OutputStream os) throws IOException {
+            public void saveTo(Writer wr) throws IOException {
               final String text = doc.getText();
-              OutputStreamWriter osw = new OutputStreamWriter(os);
-              osw.write(text,0,text.length());
-              osw.flush();
+              //OutputStreamWriter osw = new OutputStreamWriter(os);
+              wr.write(text,0,text.length());
+              wr.flush();
             }
           });
         }

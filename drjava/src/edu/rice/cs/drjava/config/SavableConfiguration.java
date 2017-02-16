@@ -67,8 +67,8 @@ public class SavableConfiguration extends Configuration {
    * @param header the header to be written
    * @throws IOException if an IO operation fails
    */
-  public void saveConfiguration(OutputStream os, String header) throws IOException {
-    PrintWriter w = new PrintWriter(new BufferedWriter(new OutputStreamWriter(os)));
+  public void saveConfiguration(Writer wr, String header) throws IOException {
+    PrintWriter w = new PrintWriter(new BufferedWriter(wr));
     //Properties p = new Properties();
 //    String tmpString;
 //    StringBuffer buff;
