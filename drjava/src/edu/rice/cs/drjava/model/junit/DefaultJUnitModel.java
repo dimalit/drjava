@@ -422,7 +422,9 @@ public class DefaultJUnitModel implements JUnitModel, JUnitModelCallback {
               final Box<String> sourceName = new SimpleBox<String>();
               new ClassReader(IOUtil.toByteArray(entry)).accept(new ClassVisitor(Opcodes.ASM4) {
                 public void visit(int version, int access, String name, String sig, String sup, String[] inters) {
-                  className.set(name.replace('/', '.'));
+                	name = name.replace('/', '.');
+                	name = name.replace(File.separatorChar, '.');
+                	className.set(name);
                 }
                 public void visitSource(String source, String debug) {
                   sourceName.set(source);
@@ -439,8 +441,12 @@ public class DefaultJUnitModel implements JUnitModel, JUnitModelCallback {
               File rootDir = classDirsAndRoots.get(dir);
               
               /** The canonical pathname for the file (including the file name) */
-              String javaSourceFileName = getCanonicalPath(rootDir) + File.separator + sourceName.value();
- 
+              String canonicalRoot = getCanonicalPath(rootDir);
+              // !! remove extra trailing slash(es) 
+              while(canonicalRoot.endsWith(File.separator))
+            	  canonicalRoot = canonicalRoot.substring(0, canonicalRoot.length()-1);
+              String javaSourceFileName = canonicalRoot + File.separator + sourceName.value();
+              
 //              System.err.println("Full java source fileName = " + javaSourceFileName);
               
               /* The index in fileName of the dot preceding the extension ".java", ".dj", ".dj0*, ".dj1", or ".dj2" */
